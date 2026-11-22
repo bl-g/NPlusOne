@@ -1,4 +1,4 @@
--# NPlusOne Backend
+# NPlusOne Backend
 The NPlusOne backend receives OpenTelemetry traces and produces rows representing server operations and their associated SQL queries.
 Clients can subscribe to a live stream of rows or search for previously stored rows.
 
