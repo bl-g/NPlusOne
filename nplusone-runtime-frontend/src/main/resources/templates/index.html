@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NPlusOne</title>
+    <link rel="stylesheet" th:href="@{/app.css(v=174338107733035729544857740701380013044)}">
+    <link rel="stylesheet" th:href="@{/exclusion-filters.css(v=237433269430095713507754860706797316190)}">
+    <link rel="stylesheet" th:href="@{/product-tour.css(v=639309659144913166)}">
+    <style>
+        .operation-toggle {
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr);
+            width: 100%;
+            min-width: 0;
+        }
+        .operation-toggle > span:last-child {
+            width: auto;
+            min-width: 0;
+            white-space: normal;
+            overflow-wrap: anywhere;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <header>
+        <div>
+            <h1 class="brand-title"><svg class="brand-logo-mark" viewBox="-2 0 28 24" role="img" aria-label="NPlusOne" focusable="false"><rect x="-1" y="3" width="26" height="18" rx="4" fill="white" stroke="#cc3d32" stroke-width="1.8"/><path d="M4 16V8l5 8V8" fill="none" stroke="#cc3d32" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 12h4m-2-2v4M19 8h1v8" fill="none" stroke="#667085" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> <span class="brand-release"><span class="beta-badge">Beta</span><span class="brand-version">v. 0.1.0</span></span></h1>
+        </div>
+        <div id="connection-status" class="status status-connecting">Connecting…</div>
+    </header>
+
+    <section class="table-container">
+        <div class="table-toolbar">
+            <div class="filter-control">
+                <div class="segmented-control" role="group" aria-label="Filter requests">
+                    <button id="show-all" class="filter-button" type="button">
+                        All
+                        <span id="all-operation-count" class="filter-count">0</span>
+                    </button>
+                    <button th:if="${callRequestsTasks}" id="show-server-operations" class="filter-button" type="button">
+                        Tasks
+                        <span id="server-operation-count" class="filter-count">0</span>
+                    </button>
+                    <button id="show-n-plus-one-operations" class="filter-button filter-button-n-plus-one" type="button">
+                        N+1
+                        <span id="n-plus-one-operation-count" class="filter-count">0</span>
+                    </button>
+                </div>
+                <div class="segmented-control results-view-control" role="group" aria-label="Results view">
+                    <button id="view-table" class="filter-button" type="button" aria-pressed="true">Table</button>
+                    <button id="view-tree" class="filter-button" type="button" aria-pressed="false">Tree</button>
+                    <button id="view-bar-chart" class="filter-button" type="button" aria-pressed="false">Bar chart</button>
+                </div>
+                <div id="table-display-controls" class="segmented-control group-display-control"
+                     role="group"
+                     aria-label="Table expansion">
+                    <span class="filter-label control-group-label">Expand</span>
+                    <button id="fully-expand-groups" class="filter-button" type="button">
+                        Expand fully
+                    </button>
+                    <button id="expand-groups" class="filter-button" type="button">
+                        Expand
+                    </button>
+                    <button id="collapse-groups" class="filter-button" type="button">
+                        Collapse
+                    </button>
+                </div>
+                <div id="query-sort-controls" class="segmented-control group-display-control query-sort-control" hidden>
+                    <span class="filter-label"><span>Sort</span><span>SQLs</span></span>
+                    <div class="segmented-control" role="group" aria-label="Sort queries by">
+                        <button class="filter-button filter-button-active" type="button" data-query-sort="count"
+                                aria-pressed="true" title="Sort by SQL execution count">SQL count</button>
+                        <button class="filter-button" type="button" data-query-sort="duration"
+                                aria-pressed="false" title="Sort by total query duration">Query duration</button>
+                        <button class="filter-button" type="button" data-query-sort="time"
+                                aria-pressed="false" title="Sort by first execution date">Date</button>
+                    </div>
+                    <div id="query-sort-direction-controls" class="segmented-control" role="group" aria-label="Query sort direction">
+                        <button class="filter-button" type="button" data-query-sort-direction="asc"
+                                aria-pressed="false" title="Lowest or earliest first">ASC</button>
+                        <button class="filter-button filter-button-active" type="button" data-query-sort-direction="desc"
+                                aria-pressed="true" title="Highest or latest first">DESC</button>
+                    </div>
+                </div>
+                <div id="tree-display-controls" class="segmented-control group-display-control tree-display-control"
+                     role="group" aria-label="Tree expansion" hidden>
+                    <span class="filter-label control-group-label">Expand</span>
+                    <button id="tree-expand-full" class="filter-button" type="button" aria-pressed="false"
+                            title="Reveal every method, including intermediate calls, and full SQL">Expand full</button>
+                    <button id="tree-show-sql-paths" class="filter-button" type="button" aria-pressed="false"
+                            title="Show all paths to SQL, keeping intermediate method chains and SQL compact">Expand to SQLs</button>
+                    <div id="tree-level-control" class="filter-button tree-level-control"
+                           title="Expand the tree to this level; intermediate method chains stay compact">
+                        <button id="tree-apply-level" type="button" title="Expand to the selected level">Level</button>
+                        <input id="tree-branch-levels" type="number" min="1" step="1" value="1"
+                               inputmode="numeric" aria-label="Expand to level">
+                    </div>
+                    <button id="tree-collapse" class="filter-button" type="button" aria-pressed="false"
+                            title="Show request headers only">Collapse</button>
+                </div>
+            </div>
+            <div class="toolbar-actions">
+                <span id="pending-update-count" class="pending-update-count" hidden>0 changes pending</span>
+                <button id="toggle-live-updates"
+                        class="live-updates-button"
+                        type="button"
+                        aria-pressed="false">
+                    Pause live updates
+                </button>
+                <button id="clear-rows" class="clear-button" type="button" disabled>
+                    Clear
+                </button>
+                <a id="reload-all-rows" class="reload-button" th:href="@{/search-page}">
+                    <span aria-hidden="true">↪</span>
+                    To search mode
+                </a>
+            </div>
+        </div>
+
+        <div id="exclusion-filters"></div>
+
+        <div class="table-scroll">
+            <table id="query-table">
+                <colgroup>
+                    <col class="server-start-column">
+                    <col class="server-operation-column">
+                    <col class="sql-count-column">
+                    <col class="sql-column">
+                    <col class="stack-trace-column">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>Request start</th>
+                    <th>Request</th>
+                    <th>SQL count</th>
+                    <th>SQL</th>
+                    <th>Stack trace</th>
+                </tr>
+                </thead>
+                <tbody id="rows">
+                <tr>
+                    <td class="empty-state" colspan="5">Waiting for rows…</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
+
+<script th:inline="javascript">
+    window.nplusoneHideProxyFrames = /*[[${hideProxyFrames}]]*/ true;
+    window.nplusoneCallRequestsTasks = /*[[${callRequestsTasks}]]*/ false;
+    window.nPlusOneDetectorStreamUrl =
+            /*[[${streamUrl}]]*/ "http://localhost:8081/api/rows/live";
+</script>
+<script type="module" th:src="@{/app.js(v=639309646489438745)}"></script>
+</body>
+</html>

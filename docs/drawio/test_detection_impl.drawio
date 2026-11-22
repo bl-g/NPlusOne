@@ -1,0 +1,208 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="9PbuO-hsI9V9mm2JIPTh">
+    <mxGraphModel dx="1843" dy="1193" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;dashPattern=8 8;" value="" vertex="1">
+          <mxGeometry height="764" width="980" x="-80" y="-180" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-34" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;dashPattern=8 8;" value="" vertex="1">
+          <mxGeometry height="100" width="300" x="510" y="-149" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-17" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;dashPattern=8 8;" value="" vertex="1">
+          <mxGeometry height="270" width="260" x="20" y="-150" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;sketch=1;curveFitting=1;jiggle=2;" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(51, 51, 51), rgb(193, 193, 193));&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;&amp;nbsp;public class MyTest {&lt;/b&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;&lt;span style=&quot;color: light-dark(rgb(0, 102, 0), rgb(193, 193, 193));&quot;&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;span style=&quot;background-color: transparent;&quot;&gt;@Test&lt;br&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(51, 51, 255), rgb(193, 193, 193));&quot;&gt;&amp;nbsp; &amp;nbsp; @AssertNoNPlusOneQueryPatterns&lt;/span&gt;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;&amp;nbsp; &amp;nbsp; public void testFoo() {&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;new MyApp().foo();&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;&amp;nbsp; &amp;nbsp; }&lt;br&gt;&amp;nbsp;}&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="150" width="260" x="134" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="&lt;b&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;JUnit&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="50" width="75" x="280" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;align=left;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;span style=&quot;color: light-dark(rgb(0, 102, 0), rgb(193, 193, 193));&quot;&gt;&amp;nbsp;@ExtendWith&lt;/span&gt;(&lt;span style=&quot;color: rgb(0, 0, 204);&quot;&gt;NPlusOneTestJUnit5Extension&lt;/span&gt;.class)&amp;nbsp; &amp;nbsp;public @interface &lt;span style=&quot;color: rgb(0, 0, 204);&quot;&gt;AssertNoNPlusOneQueryPatterns&lt;/span&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="360" x="430" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-9" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;exitX=1.018;exitY=0.456;exitDx=0;exitDy=0;entryX=-0.002;entryY=0.452;entryDx=0;entryDy=0;dashed=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" target="Z2bcxOWbgkdbd_TvFQ1U-3" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="394" y="357.62934362934357" as="sourcePoint" />
+            <mxPoint x="430" y="358.9999999999998" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=default;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;&lt;b style=&quot;&quot;&gt;JVM&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="-50" y="-195" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-14" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;OpenTelemetry Java Agent&lt;br&gt;(incl. SDK)&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="40" width="220" x="40" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;JdbcStackTraceSpanProcessor&lt;/b&gt;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="40" width="220" x="40" y="-36" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;NPlusOneTestSpanProcessor&lt;/b&gt;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="40" width="220" x="40" y="-126" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-19" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=default;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;N+1 Java agent&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="150" x="46" y="-165" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;sketch=1;curveFitting=1;jiggle=2;" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(51, 51, 51), rgb(193, 193, 193));&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;&amp;nbsp;public class MyApp {&lt;/b&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;&lt;span style=&quot;color: light-dark(rgb(0, 102, 0), rgb(193, 193, 193));&quot;&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/b&gt;&lt;/font&gt;&lt;b style=&quot;font-size: 14px; background-color: transparent; color: light-dark(rgb(51, 51, 51), rgb(193, 193, 193));&quot;&gt;&amp;nbsp; &amp;nbsp; public void foo() {&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;...&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;&amp;nbsp; &amp;nbsp; }&lt;br&gt;&amp;nbsp;}&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="220" x="134" y="456" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-22" edge="1" parent="1" source="Z2bcxOWbgkdbd_TvFQ1U-14" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;exitX=0.143;exitY=0.996;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;" target="Z2bcxOWbgkdbd_TvFQ1U-1" value="">
+          <mxGeometry height="50" relative="1" width="50" x="-0.0274" as="geometry">
+            <Array as="points">
+              <mxPoint x="70" y="365" />
+            </Array>
+            <mxPoint x="520" y="330" as="sourcePoint" />
+            <mxPoint x="570" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-21" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;rounded=0;fillStyle=auto;fillColor=default;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;0. &lt;/b&gt;&lt;i&gt;instrument&lt;br&gt;bytecode&lt;/i&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="100" x="20" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-24" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;" target="Z2bcxOWbgkdbd_TvFQ1U-20" value="">
+          <mxGeometry height="50" relative="1" width="50" x="-0.1638" as="geometry">
+            <Array as="points">
+              <mxPoint x="71.92" y="516" />
+            </Array>
+            <mxPoint x="70" y="365.59" as="sourcePoint" />
+            <mxPoint x="150" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-25" edge="1" parent="1" source="Z2bcxOWbgkdbd_TvFQ1U-2" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;exitX=0.16;exitY=1.04;exitDx=0;exitDy=0;entryX=0.619;entryY=-0.02;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" target="Z2bcxOWbgkdbd_TvFQ1U-1" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;1.&lt;/b&gt;&lt;i&gt; register test&lt;br&gt;&amp;nbsp;&amp;amp; N+1 extension&lt;br&gt;(through annotation)&lt;/i&gt;&lt;/font&gt;">
+          <mxGeometry height="50" relative="1" width="50" x="-0.1061" y="-5" as="geometry">
+            <mxPoint x="-1" as="offset" />
+            <mxPoint x="570" y="240" as="sourcePoint" />
+            <mxPoint x="620" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-27" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;align=left;" value="&lt;span style=&quot;font-size: 14px; color: rgb(51, 0, 0);&quot;&gt;&amp;nbsp;class &lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 204); font-size: 14px;&quot;&gt;NPlusOneTestJUnit5Extension&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 14px; color: rgb(51, 0, 0);&quot;&gt;implements&amp;nbsp;&lt;br&gt;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px; color: rgb(0, 102, 0);&quot;&gt;&lt;font color=&quot;#330000&quot;&gt;&lt;span style=&quot;color: rgb(0, 102, 0); background-color: transparent;&quot;&gt;&amp;nbsp;AfterTestExecutionCallback,&lt;br&gt;&lt;/span&gt;&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 14px; color: rgb(0, 102, 0);&quot;&gt;&lt;font color=&quot;#330000&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 14px; color: rgb(0, 102, 0);&quot;&gt;BeforeTestExecutionCallback&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 204); font-size: 14px;&quot;&gt;,&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="340" x="530" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-28" edge="1" parent="1" source="Z2bcxOWbgkdbd_TvFQ1U-3" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;exitX=0.582;exitY=0.037;exitDx=0;exitDy=0;entryX=0.32;entryY=1.027;entryDx=0;entryDy=0;dashed=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" target="Z2bcxOWbgkdbd_TvFQ1U-27" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="430" y="380" as="sourcePoint" />
+            <mxPoint x="490" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-29" edge="1" parent="1" source="Z2bcxOWbgkdbd_TvFQ1U-2" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" target="Z2bcxOWbgkdbd_TvFQ1U-27" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b style=&quot;&quot;&gt;&amp;nbsp;2.&lt;/b&gt;&lt;i style=&quot;&quot;&gt; call before&lt;br&gt;&amp;nbsp;test start&lt;/i&gt;&lt;/font&gt;">
+          <mxGeometry height="50" relative="1" width="50" x="0.0885" y="8" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="400" y="275" />
+            </Array>
+            <mxPoint x="620" y="260" as="sourcePoint" />
+            <mxPoint x="670" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-30" edge="1" parent="1" source="Z2bcxOWbgkdbd_TvFQ1U-27" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;entryX=1;entryY=0.25;entryDx=0;entryDy=0;exitX=0.033;exitY=-0.027;exitDx=0;exitDy=0;" target="Z2bcxOWbgkdbd_TvFQ1U-14" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;&amp;nbsp;3.&lt;/b&gt;&lt;i&gt; create span &lt;br&gt;(&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;and make it &lt;br&gt;&#39;current&#39;&amp;nbsp;span&lt;/span&gt;)&lt;/i&gt;&lt;/font&gt;">
+          <mxGeometry height="50" relative="1" width="50" x="-0.2162" y="-8" as="geometry">
+            <mxPoint x="1" as="offset" />
+            <mxPoint x="620" y="230" as="sourcePoint" />
+            <mxPoint x="670" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-32" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b style=&quot;font-size: 14px;&quot;&gt;NPlusOneTestBridge&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Map&amp;lt;String, List&amp;lt;JdbcSpanSnapshot&amp;gt;&amp;gt;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="40" width="264" x="528" y="-119" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-33" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;entryX=0.109;entryY=1.009;entryDx=0;entryDy=0;exitX=0.154;exitY=0.021;exitDx=0;exitDy=0;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;4.&lt;/b&gt;&lt;i&gt; register&lt;br&gt;&amp;nbsp;span&#39;s trace-id&lt;/i&gt;&lt;/font&gt;">
+          <mxGeometry height="50" relative="1" width="50" x="-0.178" y="7" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="564.2025052192066" y="230" as="sourcePoint" />
+            <mxPoint x="562.5009823182713" y="-79" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-35" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=default;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;&quot;&gt;Bootstrap Class Loader&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="235" x="542.5" y="-165" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-36" edge="1" parent="1" source="Z2bcxOWbgkdbd_TvFQ1U-20" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0.045;entryY=1.041;entryDx=0;entryDy=0;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;" target="Z2bcxOWbgkdbd_TvFQ1U-14" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;i&gt;&lt;b&gt;6. &lt;/b&gt;create &lt;br&gt;JDBC spans&lt;br&gt;(&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;as children of&lt;br&gt;&#39;current&#39; span&lt;/span&gt;)&lt;/i&gt;&lt;/font&gt;">
+          <mxGeometry height="50" relative="1" width="50" x="-0.0003" y="-10" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="-20" y="546" />
+              <mxPoint x="-20" y="280" />
+            </Array>
+            <mxPoint x="550" y="220" as="sourcePoint" />
+            <mxPoint x="600" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-37" edge="1" parent="1" source="Z2bcxOWbgkdbd_TvFQ1U-2" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.165;entryY=-0.007;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" target="Z2bcxOWbgkdbd_TvFQ1U-1" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;5.&lt;/b&gt;&lt;i&gt; run test&lt;/i&gt;&lt;/font&gt;">
+          <mxGeometry height="50" relative="1" width="50" x="-0.0497" y="-2" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="176.84" y="175" />
+            </Array>
+            <mxPoint x="510" y="220" as="sourcePoint" />
+            <mxPoint x="560" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-38" edge="1" parent="1" source="Z2bcxOWbgkdbd_TvFQ1U-14" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;exitX=0.463;exitY=-0.05;exitDx=0;exitDy=0;entryX=0.463;entryY=1.086;entryDx=0;entryDy=0;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;" target="Z2bcxOWbgkdbd_TvFQ1U-15" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;7. &lt;/b&gt;&lt;i&gt;invoke&lt;/i&gt;&lt;/font&gt;">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="590" y="220" as="sourcePoint" />
+            <mxPoint x="640" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-39" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;rounded=0;fillColor=default;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;i&gt;&lt;b&gt;8.&lt;/b&gt; add stacktrace (id)&lt;br&gt;to span&#39;s attributes&lt;/i&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="140" x="-40" y="7" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-41" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;exitX=0.967;exitY=-0.089;exitDx=0;exitDy=0;entryX=0.921;entryY=1.023;entryDx=0;entryDy=0;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;" value="&lt;font style=&quot;font-size: 14px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;&lt;b&gt;9. &lt;/b&gt;&lt;i&gt;invoke&lt;/i&gt;&lt;/font&gt;">
+          <mxGeometry height="50" relative="1" width="50" x="0.0821" y="-20" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="270" y="20" />
+              <mxPoint x="270" y="-50" />
+            </Array>
+            <mxPoint x="237.21561999999994" y="60" as="sourcePoint" />
+            <mxPoint x="238.54684500000008" y="-86" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-42" edge="1" parent="1" source="Z2bcxOWbgkdbd_TvFQ1U-1" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;exitX=0.943;exitY=1.014;exitDx=0;exitDy=0;dashed=1;entryX=1;entryY=0.25;entryDx=0;entryDy=0;exitPerimeter=0;" target="Z2bcxOWbgkdbd_TvFQ1U-20" value="">
+          <mxGeometry height="50" relative="1" width="50" x="-0.056" as="geometry">
+            <Array as="points">
+              <mxPoint x="379.7" y="486" />
+            </Array>
+            <mxPoint x="540" y="220" as="sourcePoint" />
+            <mxPoint x="590" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-43" edge="1" parent="1" source="Z2bcxOWbgkdbd_TvFQ1U-16" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0.006;entryY=0.611;entryDx=0;entryDy=0;" target="Z2bcxOWbgkdbd_TvFQ1U-32" value="&lt;i style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b style=&quot;&quot;&gt;10.&lt;/b&gt; register span &lt;br&gt;(incl. stacktrace attributes)&lt;br&gt;at the span&#39;s trace-id&lt;/font&gt;&lt;/i&gt;">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="340" as="sourcePoint" />
+            <mxPoint x="390" y="-50" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-44" edge="1" parent="1" source="Z2bcxOWbgkdbd_TvFQ1U-2" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#82b366;fillColor=#d5e8d4;strokeWidth=2;" target="Z2bcxOWbgkdbd_TvFQ1U-27" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;11.&amp;nbsp;&lt;/b&gt;&lt;i&gt;call after&lt;br&gt;&amp;nbsp;test end&lt;/i&gt;&lt;/font&gt;">
+          <mxGeometry height="50" relative="1" width="50" x="-0.2162" y="-8" as="geometry">
+            <mxPoint x="1" as="offset" />
+            <mxPoint x="1319" y="300" as="sourcePoint" />
+            <mxPoint x="1030" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-46" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;entryX=0.293;entryY=1.067;entryDx=0;entryDy=0;exitX=0.272;exitY=0.006;exitDx=0;exitDy=0;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;12.&lt;/b&gt;&lt;i&gt;&amp;nbsp;register&lt;br&gt;&amp;nbsp;trace-id&lt;br&gt;as completed&lt;/i&gt;&lt;/font&gt;">
+          <mxGeometry height="50" relative="1" width="50" x="0.2298" y="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="613.5384615384614" y="230" as="sourcePoint" />
+            <mxPoint x="611.8412698412703" y="-79" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-47" edge="1" parent="1" source="Z2bcxOWbgkdbd_TvFQ1U-32" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;entryX=0.379;entryY=-0.031;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="Z2bcxOWbgkdbd_TvFQ1U-27" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;13.&lt;/b&gt;&lt;i&gt;&amp;nbsp;&lt;/i&gt;&lt;u&gt;span-data&lt;/u&gt;&lt;br&gt;(of the given &lt;br&gt;trace-id)&lt;/font&gt;">
+          <mxGeometry height="50" relative="1" width="50" x="0.2298" y="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="741.6971916971911" y="449" as="sourcePoint" />
+            <mxPoint x="740" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-48" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;NPlusOne&lt;/b&gt;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="40" width="140" x="730" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-49" edge="1" parent="1" source="Z2bcxOWbgkdbd_TvFQ1U-27" style="endArrow=classic;html=1;rounded=0;defaultLabelBackgroundColor=page;entryX=0.136;entryY=0.981;entryDx=0;entryDy=0;exitX=0.641;exitY=-0.013;exitDx=0;exitDy=0;" target="Z2bcxOWbgkdbd_TvFQ1U-48" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;14. &lt;/b&gt;&lt;u&gt;span-data&lt;/u&gt;&lt;/font&gt;">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="481" y="237" as="sourcePoint" />
+            <mxPoint x="531" y="187" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Z2bcxOWbgkdbd_TvFQ1U-50" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;rounded=0;fillColor=default;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;i&gt;&lt;b&gt;15.&lt;/b&gt;&amp;nbsp;throw AssertionError&lt;br&gt;(thus make test fail)&lt;br&gt;if N+1 queries detected,&lt;br&gt;with a message that contains the SQL query&lt;br&gt;and its origin (stack trace)&lt;/i&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="178" x="708" y="18" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

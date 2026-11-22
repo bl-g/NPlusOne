@@ -1,0 +1,22 @@
+.worktreeinclude
+.env
+.env.local
+.env.*.local
+local.properties
+*.local.properties
+docker-compose.override.yml
+docker-compose.override.yaml
+*.local.yml
+*.local.yaml
+*.local.json
+*.local.xml
+secrets.yml
+secrets.yaml
+
+# --- IntelliJ project settings, added automatically ---
+# Local IDE project settings.
+.idea/*.xml
+.idea/runConfigurations/
+.idea/codeStyles/
+.idea/inspectionProfiles/
+.run/
