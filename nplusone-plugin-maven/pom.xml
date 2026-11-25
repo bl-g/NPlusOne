@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.goosb.nplusone</groupId>
     <artifactId>nplusone-plugin-maven</artifactId>
-    <version>0.1.0-beta.1</version>
+    <version>0.1.0-beta.2</version>
     <packaging>maven-plugin</packaging>
     <name>NPlusOne Maven Plugin</name>
     <description>Attaches the NPlusOne Java agent to Maven test JVMs.</description>
@@ -17,7 +17,7 @@
         <dependency>
             <groupId>com.goosb.nplusone</groupId>
             <artifactId>nplusone-common</artifactId>
-            <version>0.1.0-beta.1</version>
+            <version>0.1.0-beta.2</version>
         </dependency>
         <dependency>
             <groupId>javax.inject</groupId>
