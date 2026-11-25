@@ -19,5 +19,5 @@ dependencies {
         ),
     )
 
-    upstreamAgent("io.opentelemetry.javaagent:opentelemetry-javaagent:2.30.0")
+    upstreamAgent(libs.opentelemetry.agent)
 }

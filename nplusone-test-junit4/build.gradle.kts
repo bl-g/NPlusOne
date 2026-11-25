@@ -11,10 +11,10 @@ publishing {
 
 dependencies {
     api(project(":nplusone-test"))
-    api("junit:junit:4.13.2")
+    api(libs.junit4)
     implementation(project(":nplusone-common"))
-    implementation("org.slf4j:slf4j-api:2.0.17")
-    implementation(platform("io.opentelemetry:opentelemetry-bom:1.64.0"))
-    implementation("io.opentelemetry:opentelemetry-api")
+    implementation(libs.slf4j.api)
+    implementation(platform(libs.opentelemetry.bom))
+    implementation(libs.opentelemetry.api)
     compileOnly(project(":nplusone-test-bootstrap"))
 }

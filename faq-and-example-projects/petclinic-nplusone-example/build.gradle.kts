@@ -1,13 +1,13 @@
 
 plugins {
     java
-    id("org.springframework.boot") version "3.5.0"
+    alias(libs.plugins.spring.boot.example)
 }
 
 dependencies {
-    implementation(platform("org.springframework.boot:spring-boot-dependencies:3.5.0"))
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    implementation("org.springframework.boot:spring-boot-starter-web")
-    runtimeOnly("com.h2database:h2")
+    implementation(platform(libs.spring.boot.example.bom))
+    implementation(libs.spring.boot.starter.data.jpa)
+    implementation(libs.spring.boot.starter.web)
+    runtimeOnly(libs.h2)
 
 }

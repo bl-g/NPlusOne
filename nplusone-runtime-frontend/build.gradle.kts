@@ -1,11 +1,11 @@
 plugins {
     java
-    id("org.springframework.boot") version "3.5.10"
+    alias(libs.plugins.spring.boot)
 }
 
 dependencies {
     implementation(project(":nplusone-common"))
-    implementation(platform("org.springframework.boot:spring-boot-dependencies:3.5.10"))
-    implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+    implementation(platform(libs.spring.boot.bom))
+    implementation(libs.spring.boot.starter.web)
+    implementation(libs.spring.boot.starter.thymeleaf)
 }

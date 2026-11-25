@@ -5,13 +5,13 @@ plugins {
 
 dependencies {
     implementation(project(":nplusone-common"))
-    implementation("org.slf4j:slf4j-api:2.0.17")
+    implementation(libs.slf4j.api)
     implementation(project(":nplusone-javaagent-extension-common"))
 
-    compileOnly(platform("io.opentelemetry:opentelemetry-bom:1.64.0"))
-    compileOnly("io.opentelemetry:opentelemetry-api")
-    compileOnly("io.opentelemetry:opentelemetry-sdk-trace")
-    compileOnly("io.opentelemetry:opentelemetry-sdk-extension-autoconfigure-spi")
+    compileOnly(platform(libs.opentelemetry.bom))
+    compileOnly(libs.opentelemetry.api)
+    compileOnly(libs.opentelemetry.sdk.trace)
+    compileOnly(libs.opentelemetry.sdk.autoconfigure.spi)
 
 }
 
