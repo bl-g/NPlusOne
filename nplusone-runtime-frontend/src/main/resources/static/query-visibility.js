@@ -1,6 +1,6 @@
 import {indexQueryIdentities, hasQueryIdentity} from "./query-identity.js?v=67434243922027452159120926522550609888";
 import {formatDuration} from "./time-formatting.js?v=182362643655531027511278026245356837010";
-import {showHiddenQueryPopup} from "./hidden-query-popup.js?v=16680971040889570868";
+import {showHiddenQueryPopup} from "./hidden-query-popup.js?v=10287061348678024565";
 
 export function summarizeVisibleQueries(allQueries, visibleQueries, totalQueryDurationMillis) {
     const visibleKeys = indexQueryIdentities(visibleQueries);

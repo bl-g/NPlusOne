@@ -4,7 +4,9 @@ import {formatDateTimestamp as formatTimestamp, formatDuration} from "./time-for
 import {createCallTreeCache, sameCallQueries, hiddenQueriesByNode, sourceQueryKey} from "./call-tree-model.js?v=80209571130848559522647497809978973720";
 import {projectCallTree} from "./call-tree-projection.js?v=217807320803597190502839157546091133361";
 import {formatRequestSummary, formatQuerySummary, formatSqlQuerySummary, renderTimingSummary} from "./request-summary.js?v=11803713701364284380";
-import {summarizeVisibleQueries, sameQueryVisibility, appendFilterIndicator} from "./query-visibility.js?v=8866866940405906500";
+import {summarizeVisibleQueries, sameQueryVisibility, appendFilterIndicator} from "./query-visibility.js?v=17861249381879261445";
+
+import {createSourceLink, sourceLinksVersion} from "./source-links.js?v=4290745485808292238";
 
 const VIEW_KEY = "nplusone.results-view.v1";
 const DISPLAY_KEY = "nplusone.call-tree-display.v1";
@@ -198,7 +200,7 @@ export function createCallTreeView({table, formatSql, renderSql, onChange, onBef
         });
     }
     function rowVersion(key) {
-        return `${revision}:${states.get(key)?.version ?? 0}`;
+        return `${sourceLinksVersion()}:${revision}:${states.get(key)?.version ?? 0}`;
     }
     function forgetRow(key) {
         const entry = recentRows.get(key);
@@ -387,13 +389,13 @@ export function createCallTreeView({table, formatSql, renderSql, onChange, onBef
                 } else {
                     const open = !descriptor.collapsed && !descriptor.frontier;
                     const line = lineFor(node);
+                    line.classList.add("call-tree-frame-line");
                     const queryOrigin = node.children.some(child => child.kind === "sql" && child.hasIssue);
                     const button = element("button", `call-tree-toggle call-tree-frame${queryOrigin ? " call-tree-query-origin" : ""}`);
                     button.type = "button";
                     button.title = node.frame.full;
                     button.setAttribute("aria-expanded", String(open));
                     button.append(arrow(open), element("span", "call-tree-method", node.frame.label));
-                    if (node.frame.location) button.append(element("span", "call-tree-source", node.frame.location));
                     button.addEventListener("click", () => {
                         const state = stateAt(stateFor(group.key), node);
                         state.collapsed = open;
@@ -401,6 +403,7 @@ export function createCallTreeView({table, formatSql, renderSql, onChange, onBef
                         changed(group.key, line.dataset.virtualAnchor);
                     });
                     line.append(button);
+                    if (node.frame.location) line.append(createSourceLink(node.frame.full, node.frame.location, "call-tree-source"));
                     line.append(nodeCounterBadge(node, group, hiddenByNode.get(node)));
                     makeRowClickable(line, button);
                     item.append(line);

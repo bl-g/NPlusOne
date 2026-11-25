@@ -1,7 +1,7 @@
 import {formatDateTimestamp} from "./time-formatting.js?v=182362643655531027511278026245356837010";
 import {requestText} from "./request-terminology.js?v=9195521797058750261190268690836445467";
 import {CHART_ROW_HEIGHT, validAxis, axisLayout, axisTicks, barGeometry, autoMaximum, chartWindow, sortChartItems} from "./bar-chart-model.js?v=110773999397227617541774901621528611862";
-import {setButtonIcon} from "./toolbar-icons.js?v=748948478179589905";
+import {setButtonIcon} from "./toolbar-icons.js?v=12186116085878300375";
 
 const countFormatter = new Intl.NumberFormat(undefined, {maximumFractionDigits: 2});
 

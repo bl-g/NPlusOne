@@ -1,3 +1,5 @@
+import {createSourceLink} from "./source-links.js?v=4290745485808292238";
+
 export function formatStackTrace(stackTrace) {
     const frames = stackTrace
             .split(/\r?\n/)
@@ -42,9 +44,7 @@ export function renderStackTrace(element, stackTrace) {
         const method = document.createElement("span");
         method.className = "stack-frame-method";
         method.textContent = frame[1] + owner.slice(classStart) + frame[2].slice(methodSeparator);
-        const source = document.createElement("span");
-        source.className = "stack-frame-source";
-        source.textContent = `(${frame[3]})` + frame[4];
+        const source = createSourceLink(displayLine.trim(), `(${frame[3]})` + frame[4], "stack-frame-source");
         span.append(method, source);
         span.title = `${frame[2]}(${frame[3]})`;
         fragment.append(span);

@@ -1,6 +1,6 @@
 import {configureDateRange} from "./date-range.js?v=70512685574943983513608468539075838973";
 import {beginTemporaryPreferences} from "./browser-storage.js?v=290084059958384501112687013092675042027";
-import {setButtonIcon} from "./toolbar-icons.js?v=748948478179589905";
+import {setButtonIcon} from "./toolbar-icons.js?v=12186116085878300375";
 
 export function createTourRequests(now = Date.now()) {
     const path = "at example.OwnerRepository.findPets(OwnerRepository.java:42)\n"
