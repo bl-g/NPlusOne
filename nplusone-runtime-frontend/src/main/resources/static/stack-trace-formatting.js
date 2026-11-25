@@ -39,8 +39,13 @@ export function renderStackTrace(element, stackTrace) {
         const classStart = Math.max(qualifiedClass.lastIndexOf("."), qualifiedClass.lastIndexOf("/")) + 1;
         const span = document.createElement("span");
         span.className = index === firstFrame ? "stack-frame stack-frame-root" : "stack-frame";
-        span.textContent = frame[1] + owner.slice(classStart) + frame[2].slice(methodSeparator)
-            + `(${frame[3]})` + frame[4];
+        const method = document.createElement("span");
+        method.className = "stack-frame-method";
+        method.textContent = frame[1] + owner.slice(classStart) + frame[2].slice(methodSeparator);
+        const source = document.createElement("span");
+        source.className = "stack-frame-source";
+        source.textContent = `(${frame[3]})` + frame[4];
+        span.append(method, source);
         span.title = `${frame[2]}(${frame[3]})`;
         fragment.append(span);
     });

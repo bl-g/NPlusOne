@@ -14,12 +14,12 @@ import {
     formatSql,
     renderHighlightedSql
 } from "./sql-formatting.js?v=107542635421253244738066243612958793875";
-import {formatStackTrace, renderStackTrace} from "./stack-trace-formatting.js?v=264878800354523343799797824770822757423";
+import {formatStackTrace, renderStackTrace} from "./stack-trace-formatting.js?v=6866917973573102231";
 import {createFormattingCache} from "./formatting-cache.js?v=184586239211110810468916259075050871850";
 import {createVirtualTable} from "./virtual-table.js?v=188564036130668086952254147403045028520";
-import {createCallTreeView} from "./call-tree.js?v=332338832162984972757566277031374814269";
-import {formatTableRequestSummary as formatRequestSummary, formatTableSqlSummary as formatSqlQuerySummary} from "./request-summary.js?v=279709107265595431799678358316915282079";
-import {summarizeVisibleQueries, sameQueryVisibility, appendFilterIndicator} from "./query-visibility.js?v=309269865418407453266603283734342634673";
+import {createCallTreeView} from "./call-tree.js?v=100248533657672417";
+import {formatTableRequestSummary as formatRequestSummary, formatTableSqlSummary as formatSqlQuerySummary, renderTimingSummary} from "./request-summary.js?v=11803713701364284380";
+import {summarizeVisibleQueries, sameQueryVisibility, appendFilterIndicator} from "./query-visibility.js?v=8866866940405906500";
 import {enableColumnResizing} from "./column-resizing.js?v=38730878206859953153070508903709775062";
 import {createExclusionFilters} from "./exclusion-filters.js?v=4766001744440295421";
 import {
@@ -833,9 +833,9 @@ function appendOperationCell(row, rowId, operationName, rowSpan, serverRow, sqlR
         const issueCount = sqlRows.filter(sql => sql.count > 1).length;
         const queryCount = serverRow.rowType === UNASSOCIATED_ROW_TYPE ? 1 : sqlRows.reduce((total, sql) => total + sql.count, 0);
         label.className = `request-label request-timing-summary${issueCount > 0 ? " request-label-alert" : ""}`;
-        label.textContent = formatRequestSummary(issueCount, queryCount,
+        renderTimingSummary(label, formatRequestSummary(issueCount, queryCount,
             visibility == null ? serverRow.jdbcDurationMillis : visibility.jdbcDurationMillis, serverRow.durationMillis,
-            visibility?.totalQueryDurationMillis ?? serverRow.jdbcDurationMillis);
+            visibility?.totalQueryDurationMillis ?? serverRow.jdbcDurationMillis));
         appendFilterIndicator(label, visibility, () => exclusionFilters.open());
         cell.append(label);
     }

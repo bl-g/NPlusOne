@@ -1,5 +1,28 @@
 import {formatDuration} from "./time-formatting.js?v=182362643655531027511278026245356837010";
 
+// Give counts and timing separate weight, with an optional presentation separator.
+export function renderTimingSummary(element, summary, timingSeparator = " · ") {
+    const timingStart = summary.search(/ · (?=\d+(?:\.\d+)? (?:ms|s|m|h)\b)/);
+    const counts = document.createElement("span");
+    counts.className = "summary-counts";
+    counts.textContent = timingStart < 0 ? summary : summary.slice(0, timingStart);
+    const issueLabel = counts.textContent.match(/^[1-9]\d* N\+1 problems?\b/)?.[0];
+    if (issueLabel) {
+        const issues = document.createElement("span");
+        issues.className = "summary-issues";
+        issues.textContent = issueLabel;
+        const remainingCounts = counts.textContent.slice(issueLabel.length).replace(/^ · /, " ");
+        counts.replaceChildren(issues, remainingCounts);
+    }
+    element.replaceChildren(counts);
+    if (timingStart >= 0) {
+        const timing = document.createElement("span");
+        timing.className = "summary-timing";
+        timing.textContent = timingSeparator + summary.slice(timingStart + 3);
+        element.append(timing);
+    }
+}
+
 export function formatRequestSummary(issues, queries, jdbcDurationMillis, serverDurationMillis,
     totalQueryDurationMillis = jdbcDurationMillis) {
     const counts = `${issues} N+1 ${issues === 1 ? "problem" : "problems"}`
