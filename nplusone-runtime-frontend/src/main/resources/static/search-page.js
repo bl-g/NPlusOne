@@ -2,10 +2,10 @@ import {configureDateRange} from "./date-range.js?v=7051268557494398351360846853
 import {sourceQueryKey} from "./call-tree-model.js?v=80209571130848559522647497809978973720";
 import {createQuerySortingControl} from "./query-sorting.js?v=331865085574760660467463706444257593837";
 import {createOperationActions} from "./operation-actions.js?v=2026630561593422880079378453098791590";
-import {installProductTour} from "./product-tour.js?v=639309646489438745";
-import {createDashboardTour} from "./tour-demo.js?v=161640648605462232010686436423946570878";
-import {createBarChart} from "./bar-chart.js?v=15771656724146708703514070823952310359";
-import {installToolbarIcons, setButtonIcon} from "./toolbar-icons.js?v=7402158213721210528724430729032752313";
+import {installProductTour} from "./product-tour.js?v=16684022446296326536";
+import {createDashboardTour} from "./tour-demo.js?v=3968506680000420920";
+import {createBarChart} from "./bar-chart.js?v=5768290792854281759";
+import {installToolbarIcons, setButtonIcon} from "./toolbar-icons.js?v=748948478179589905";
 import {
     readStoredValue,
     writeStoredValue
@@ -21,7 +21,7 @@ import {createCallTreeView} from "./call-tree.js?v=33233883216298497275756627703
 import {formatTableRequestSummary as formatRequestSummary, formatTableSqlSummary as formatSqlQuerySummary} from "./request-summary.js?v=279709107265595431799678358316915282079";
 import {summarizeVisibleQueries, sameQueryVisibility, appendFilterIndicator} from "./query-visibility.js?v=309269865418407453266603283734342634673";
 import {enableColumnResizing} from "./column-resizing.js?v=38730878206859953153070508903709775062";
-import {createExclusionFilters} from "./exclusion-filters.js?v=86251318403235265372531489495894345426";
+import {createExclusionFilters} from "./exclusion-filters.js?v=4766001744440295421";
 import {
     sortByNewestTimestamp,
     formatDuration,

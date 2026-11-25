@@ -7,8 +7,8 @@ import {
     serializeRuleSets, parseRuleSets, regexError
 } from "./filter-model.js?v=96746998124892846094911012588429907879";
 export * from "./filter-model.js?v=96746998124892846094911012588429907879";
-import {createLongestQueriesControl} from "./longest-queries.js?v=115765018277472881014474996649941966414";
-import {setButtonIcon, createToolbarIcon} from "./toolbar-icons.js?v=7402158213721210528724430729032752313";
+import {createLongestQueriesControl} from "./longest-queries.js?v=4663230853334700042";
+import {setButtonIcon, createToolbarIcon} from "./toolbar-icons.js?v=748948478179589905";
 
 const STORAGE_KEY = "nplusone.rule-sets.v1";
 const LEGACY_KEY = "nplusone.exclusion-filters.v1";
@@ -863,7 +863,7 @@ export function createExclusionFilters(container, onChange, {temporary = false} 
                 highlight = nPlusOneToggle;
             } else queryInput.focus({preventScroll: true});
             highlight.getAnimations().forEach(animation => animation.cancel());
-            highlight.animate([{boxShadow: "0 0 0 3px #d6a52a"},
+            highlight.animate([{boxShadow: "0 0 0 3px var(--color-primary-border)"},
                 {boxShadow: "0 0 0 0 transparent"}], {duration: 1500});
         }
     };

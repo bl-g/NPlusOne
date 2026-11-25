@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1><img src="docs/imgs/logo.png" alt="NPlusOne" width="136"></h1>
+<h1><img src="docs/imgs/logo.svg" alt="NPlusOne" width="136"></h1>
 
 [![Build](https://github.com/bl-g/NPlusOne/actions/workflows/build_and_test.yml/badge.svg)](https://github.com/bl-g/NPlusOne/actions/workflows/build_and_test.yml)
 [![Java](https://img.shields.io/badge/Java-17+-orange.svg)](https://www.oracle.com/java/)

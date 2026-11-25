@@ -1,6 +1,6 @@
 import {requestText} from "./request-terminology.js?v=9195521797058750261190268690836445467";
 import {readStoredJson, writeStoredJson} from "./browser-storage.js?v=290084059958384501112687013092675042027";
-import {setButtonIcon} from "./toolbar-icons.js?v=7402158213721210528724430729032752313";
+import {setButtonIcon} from "./toolbar-icons.js?v=748948478179589905";
 
 const STORAGE_KEY = "nplusone.longest-queries.v1";
 
