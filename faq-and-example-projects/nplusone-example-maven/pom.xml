@@ -17,9 +17,22 @@
 
     <properties>
         <java.version>17</java.version>
+        <junit-jupiter.version>5.13.4</junit-jupiter.version>
+        <nplusone.version>0.1.0-beta.1</nplusone.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.goosb.nplusone</groupId>
+            <artifactId>nplusone-test-junit-jupiter</artifactId>
+            <version>${nplusone.version}</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
@@ -37,6 +50,21 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>com.goosb.nplusone</groupId>
+                <artifactId>nplusone-plugin-maven</artifactId>
+                <version>${nplusone.version}</version>
+                <configuration>
+                    <applicationPackagePrefixes>com.goosb.nplusone.examples</applicationPackagePrefixes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
