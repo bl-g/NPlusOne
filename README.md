@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1><img src="docs/imgs/logo.png" alt="NPlusOne" width="136"></h1>
+<h1><img src="docs/imgs/logo.svg" alt="NPlusOne" width="136"></h1>
 
 [![Build](https://github.com/bl-g/NPlusOne/actions/workflows/build_and_test.yml/badge.svg)](https://github.com/bl-g/NPlusOne/actions/workflows/build_and_test.yml)
 [![Java](https://img.shields.io/badge/Java-17+-orange.svg)](https://www.oracle.com/java/)
@@ -56,7 +56,7 @@ Get started with the test assertions by adding the NPlusOne plugin and test depe
 Add the plugin:
 ```kotlin
 plugins {
-    id("com.goosb.nplusone") version "0.1.0-beta.1"
+    id("com.goosb.nplusone") version "0.1.0-beta.2"
 }
 ```
 
@@ -64,7 +64,7 @@ Additionally, add either `nplusone-test-junit4` or `junit-jupiter` (JUnit 5 and 
 Example:
 ```kotlin
 plugins {
-    testImplementation("com.goosb.nplusone:nplusone-test-junit-jupiter:0.1.0-beta.1")
+    testImplementation("com.goosb.nplusone:nplusone-test-junit-jupiter:0.1.0-beta.2")
 }
 ```
 
@@ -74,7 +74,7 @@ Add the plugin:
 <plugin>
     <groupId>com.goosb.nplusone</groupId>
     <artifactId>nplusone-plugin-maven</artifactId>
-    <version>0.1.0-beta.1</version>
+    <version>0.1.0-beta.2</version>
     <executions>
         <execution>
             <goals>
@@ -91,7 +91,7 @@ Example:
 <dependency>
     <groupId>com.goosb.nplusone</groupId>
     <artifactId>nplusone-test-junit-jupiter</artifactId>
-    <version>0.1.0-beta.1</version>
+    <version>0.1.0-beta.2</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -154,7 +154,7 @@ Next, download the [Open Telemetry Java agent](https://github.com/open-telemetry
 Use them as value for the JVM parameters `javaagent` respectively `otel.javaagent.extensions` when launching the application that should be monitored:
 ```shell
   -javaagent:/path/to/opentelemetry-javaagent.jar
-  -Dotel.javaagent.extensions=/path/to/nplusone-javaagent-extension-0.1.0-beta.1.jar
+  -Dotel.javaagent.extensions=/path/to/nplusone-javaagent-extension-0.1.0-beta.2.jar
 ```
 
 And that's it. Now send requests to your application that trigger JDBC queries, and browse to [localhost:8082](http://localhost:8082/) to view the NPlusOne's dashboards.

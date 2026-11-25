@@ -11,14 +11,14 @@ base {
 dependencies {
     implementation(project(":nplusone-common"))
     implementation(project(":nplusone-javaagent-extension-common"))
-    implementation("org.slf4j:slf4j-api:2.0.17")
+    implementation(libs.slf4j.api)
     compileOnly(project(":nplusone-test-bootstrap"))
 
-    compileOnly(platform("io.opentelemetry:opentelemetry-bom:1.64.0"))
-    implementation("io.opentelemetry.semconv:opentelemetry-semconv:1.43.0")
-    compileOnly("io.opentelemetry:opentelemetry-api")
-    compileOnly("io.opentelemetry:opentelemetry-sdk-trace")
-    compileOnly("io.opentelemetry:opentelemetry-sdk-extension-autoconfigure-spi")
+    compileOnly(platform(libs.opentelemetry.bom))
+    implementation(libs.opentelemetry.semconv)
+    compileOnly(libs.opentelemetry.api)
+    compileOnly(libs.opentelemetry.sdk.trace)
+    compileOnly(libs.opentelemetry.sdk.autoconfigure.spi)
 
 }
 

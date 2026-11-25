@@ -1,6 +1,7 @@
 plugins {
     java
-    id("org.springframework.boot") version "3.5.0"
+    alias(libs.plugins.spring.boot.example)
+    alias(libs.plugins.nplusone)
 }
 
 repositories {
@@ -22,10 +23,20 @@ tasks.withType<JavaCompile>().configureEach {
 
 
 dependencies {
-    implementation("com.goosb.nplusone:nplusone-common:0.1.0-beta.1")
-    implementation(platform("org.springframework.boot:spring-boot-dependencies:3.5.0"))
-    implementation("org.springframework.boot:spring-boot-starter-jdbc")
-    implementation("org.springframework.boot:spring-boot-starter-web")
-    runtimeOnly("com.h2database:h2")
+    implementation(platform(libs.spring.boot.example.bom))
+    implementation(libs.spring.boot.starter.jdbc)
+    implementation(libs.spring.boot.starter.web)
+    runtimeOnly(libs.h2)
+    testImplementation(platform(libs.junit.bom))
+    testImplementation(libs.spring.boot.starter.test)
+    testImplementation(libs.nplusone.test.junit.jupiter)
+    testRuntimeOnly(libs.junit.platform.launcher)
+}
 
+nplusone {
+    applicationPackagePrefixes.set("com.goosb.nplusone.examples")
+}
+
+tasks.test {
+    useJUnitPlatform()
 }

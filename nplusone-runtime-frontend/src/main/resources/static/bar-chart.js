@@ -1,7 +1,7 @@
 import {formatDateTimestamp} from "./time-formatting.js?v=182362643655531027511278026245356837010";
 import {requestText} from "./request-terminology.js?v=9195521797058750261190268690836445467";
 import {CHART_ROW_HEIGHT, validAxis, axisLayout, axisTicks, barGeometry, autoMaximum, chartWindow, sortChartItems} from "./bar-chart-model.js?v=110773999397227617541774901621528611862";
-import {setButtonIcon} from "./toolbar-icons.js?v=7402158213721210528724430729032752313";
+import {setButtonIcon} from "./toolbar-icons.js?v=748948478179589905";
 
 const countFormatter = new Intl.NumberFormat(undefined, {maximumFractionDigits: 2});
 
@@ -212,6 +212,7 @@ export function createBarChart({table, treeView, onChange, live = false, onLoadM
         const geometry = barGeometry(value, range);
         bar.style.width = `${geometry.percent}%`;
         bar.textContent = countFormatter.format(value);
+        bar.classList.toggle("chart-bar-zero", value === 0);
         bar.classList.toggle("chart-clipped-high", geometry.clipped === "high");
         bar.classList.toggle("chart-clipped-low", geometry.clipped === "low");
         bar.title = `${value} ${label}; axis ${range.min} to ${range.max}`

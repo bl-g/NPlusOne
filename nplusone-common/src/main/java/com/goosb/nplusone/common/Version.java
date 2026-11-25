@@ -2,9 +2,10 @@ package com.goosb.nplusone.common;
 
 public enum Version {
     ZERO_ONE_ZERO_BETA_ONE("0.1.0-beta.1"),
+    ZERO_ONE_ZERO_BETA_TWO("0.1.0-beta.2"),
     ;
 
-    public static final Version CURRENT = ZERO_ONE_ZERO_BETA_ONE;
+    public static final Version CURRENT = ZERO_ONE_ZERO_BETA_TWO;
 
     private final String value;
 

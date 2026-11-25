@@ -56,7 +56,7 @@ Download the `opentelemetry-javaagent.jar` from the latest release.
 
 The NPlusOne extension for this Java agent can be downloaded from [this project's releases page](https://github.com/bl-g/NPlusOne/releases).
 
-Download the `nplusone-javaagent-extension-0.1.0-beta.1.jar`.
+Download the `nplusone-javaagent-extension-0.1.0-beta.2.jar`.
 
 ### 2. Start the NPlusOne backend and frontend
 
@@ -87,11 +87,11 @@ Frontend:
 Alternatively, download the backend and frontend JARs from [this project's releases page](https://github.com/bl-g/NPlusOne/releases)
 and run each in a separate terminal:
 ```shell
-java -jar nplusone-runtime-backend-0.1.0-beta.1.jar
+java -jar nplusone-runtime-backend-0.1.0-beta.2.jar
 ```
 Then start the frontend:
 ```shell
-java -jar nplusone-runtime-frontend-0.1.0-beta.1.jar
+java -jar nplusone-runtime-frontend-0.1.0-beta.2.jar
 ```
 
 ### 3. Start the application you want to monitor
@@ -102,7 +102,7 @@ in PowerShell, put the command on one line or replace each trailing `\` with a b
 ```shell
 java \
   -javaagent:/path/to/opentelemetry-javaagent.jar \
-  -Dotel.javaagent.extensions=/path/to/nplusone-javaagent-extension-0.1.0-beta.1.jar \
+  -Dotel.javaagent.extensions=/path/to/nplusone-javaagent-extension-0.1.0-beta.2.jar \
   -Dotel.service.name=my-app \
   -Dotel.exporter.otlp.endpoint=http://localhost:4317 \
   -Dotel.exporter.otlp.protocol=grpc \
@@ -232,7 +232,7 @@ their local copy, then open the frontend and switch from the live view to the se
 
 Check that:
 - The backend and frontend are running, and the frontend's `nplusone.backend-url` points to the backend.
-- The monitored application starts with both `-javaagent:/path/to/opentelemetry-javaagent.jar` and `-Dotel.javaagent.extensions=/path/to/nplusone-javaagent-extension-0.1.0-beta.1.jar`.
+- The monitored application starts with both `-javaagent:/path/to/opentelemetry-javaagent.jar` and `-Dotel.javaagent.extensions=/path/to/nplusone-javaagent-extension-0.1.0-beta.2.jar`.
 - `otel.javaagent.enabled` is not `false`, and trace exporting is enabled.
 - `otel.exporter.otlp.endpoint` points to the backend's OTLP port (default: `4317`), and `otel.exporter.otlp.protocol` is `grpc`.
 - You have sent requests that execute JDBC queries. Queries from before the agent started are not captured.
@@ -269,7 +269,7 @@ For agent diagnostics, also set `otel.javaagent.debug=true` in the monitored app
 
 Yes. If your application already uses the OpenTelemetry Java agent, add the NPlusOne extension to that agent rather than attaching a second agent:
 ```shell
--Dotel.javaagent.extensions=/path/to/nplusone-javaagent-extension-0.1.0-beta.1.jar
+-Dotel.javaagent.extensions=/path/to/nplusone-javaagent-extension-0.1.0-beta.2.jar
 ```
 
 <a id="quick-start-test-asserts"></a>
@@ -286,12 +286,12 @@ propagate the OpenTelemetry context (and finish before the test completes). This
 
 ### 1. Configure the build plugin
 
-Gradle Kotlin DSL: apply the Java and NPlusOne plugins in `build.gradle.kts`. The N+1 plugin attaches the test Java agent to test tasks. Add `testImplementation("com.goosb.nplusone:nplusone-test-junit-jupiter:0.1.0-beta.1")` for Jupiter or use `nplusone-test-junit4` for JUnit 4. Configure package prefixes to include your application and test code when needed.
+Gradle Kotlin DSL: apply the Java and NPlusOne plugins in `build.gradle.kts`. The N+1 plugin attaches the test Java agent to test tasks. Add `testImplementation("com.goosb.nplusone:nplusone-test-junit-jupiter:0.1.0-beta.2")` for Jupiter or use `nplusone-test-junit4` for JUnit 4. Configure package prefixes to include your application and test code when needed.
 
 ```kotlin
 plugins {
     java
-    id("com.goosb.nplusone") version "0.1.0-beta.1"
+    id("com.goosb.nplusone") version "0.1.0-beta.2"
 }
 
 nplusone {
@@ -310,7 +310,7 @@ No Maven extension declaration or `nplusone.agentArgLine` placeholder is require
 <plugin>
     <groupId>com.goosb.nplusone</groupId>
     <artifactId>nplusone-plugin-maven</artifactId>
-    <version>0.1.0-beta.1</version>
+    <version>0.1.0-beta.2</version>
     <configuration>
         <applicationPackagePrefixes>test.com.foo,com.foo</applicationPackagePrefixes>
     </configuration>
@@ -327,7 +327,7 @@ Also add `nplusone-test-junit-jupiter` (or `nplusone-test-junit4`) inside `<depe
 <dependency>
     <groupId>com.goosb.nplusone</groupId>
     <artifactId>nplusone-test-junit-jupiter</artifactId>
-    <version>0.1.0-beta.1</version>
+    <version>0.1.0-beta.2</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -370,7 +370,7 @@ Set this property in the test JVM (see [how to disable assertions](#disable-test
 
 - `nplusone.test.agent.disabled` (default: `false`): disables N+1 assertions when set to `true`.
 
-The Gradle plugin's `nplusone` extension also supports `enabled` (default: `true`), `nplusoneVersion` (default: `0.1.0-beta.1`), and `applicationPackagePrefixes`.
+The Gradle plugin's `nplusone` extension also supports `enabled` (default: `true`), `nplusoneVersion` (default: `0.1.0-beta.2`), and `applicationPackagePrefixes`.
 The Maven plugin supports the same settings in its `<configuration>`.
 Maven's `nplusoneVersion` must match the chosen `nplusone-test-junit4` or `nplusone-test-junit-jupiter` dependency version.
 Setting `enabled` to `false` disables both instrumentation and assertions.

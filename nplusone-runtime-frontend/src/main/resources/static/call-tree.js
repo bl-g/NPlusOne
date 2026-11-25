@@ -3,8 +3,8 @@ import {readStoredValue, writeStoredValue} from "./browser-storage.js?v=29008405
 import {formatDateTimestamp as formatTimestamp, formatDuration} from "./time-formatting.js?v=182362643655531027511278026245356837010";
 import {createCallTreeCache, sameCallQueries, hiddenQueriesByNode, sourceQueryKey} from "./call-tree-model.js?v=80209571130848559522647497809978973720";
 import {projectCallTree} from "./call-tree-projection.js?v=217807320803597190502839157546091133361";
-import {formatRequestSummary, formatQuerySummary, formatSqlQuerySummary} from "./request-summary.js?v=279709107265595431799678358316915282079";
-import {summarizeVisibleQueries, sameQueryVisibility, appendFilterIndicator} from "./query-visibility.js?v=309269865418407453266603283734342634673";
+import {formatRequestSummary, formatQuerySummary, formatSqlQuerySummary, renderTimingSummary} from "./request-summary.js?v=11803713701364284380";
+import {summarizeVisibleQueries, sameQueryVisibility, appendFilterIndicator} from "./query-visibility.js?v=8866866940405906500";
 
 const VIEW_KEY = "nplusone.results-view.v1";
 const DISPLAY_KEY = "nplusone.call-tree-display.v1";
@@ -178,8 +178,10 @@ export function createCallTreeView({table, formatSql, renderSql, onChange, onBef
         totalQueryDurationMillis = jdbcDurationMillis, visibility, onFilterClick} = {}) {
         const description = queryOnly ? formatSqlQuerySummary(queries, jdbcDurationMillis, totalQueryDurationMillis)
             : formatRequestSummary(issues, queries, jdbcDurationMillis, full ? serverDurationMillis : null, totalQueryDurationMillis);
-        const badge = element("span", `call-tree-issue${issues === 0 ? " call-tree-issue-neutral" : ""}${className}`,
-            full || queryOnly ? description : formatQuerySummary(issues, queries, jdbcDurationMillis, serverDurationMillis, totalQueryDurationMillis));
+        const badge = element("span", `call-tree-issue${issues === 0 ? " call-tree-issue-neutral" : ""}${className}`);
+        renderTimingSummary(badge, full || queryOnly ? description
+            : formatQuerySummary(issues, queries, jdbcDurationMillis, serverDurationMillis, totalQueryDurationMillis),
+            queryOnly ? " " : " · ");
         badge.title = description;
         badge.setAttribute("aria-label", description);
         badge.dataset.nPlusOneCount = String(issues);
@@ -385,7 +387,8 @@ export function createCallTreeView({table, formatSql, renderSql, onChange, onBef
                 } else {
                     const open = !descriptor.collapsed && !descriptor.frontier;
                     const line = lineFor(node);
-                    const button = element("button", "call-tree-toggle call-tree-frame");
+                    const queryOrigin = node.children.some(child => child.kind === "sql" && child.hasIssue);
+                    const button = element("button", `call-tree-toggle call-tree-frame${queryOrigin ? " call-tree-query-origin" : ""}`);
                     button.type = "button";
                     button.title = node.frame.full;
                     button.setAttribute("aria-expanded", String(open));

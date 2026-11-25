@@ -1,6 +1,6 @@
 import {createTourArticle} from "./tour-articles.js?v=2608697119837843173360114979007065768";
 import {readStoredValue, writeStoredValue} from "./browser-storage.js?v=290084059958384501112687013092675042027";
-import {createTourRequests} from "./tour-demo.js?v=161640648605462232010686436423946570878";
+import {createTourRequests} from "./tour-demo.js?v=3968506680000420920";
 
 const TOUR_KEY = "nplusone.product-tour.v1";
 
