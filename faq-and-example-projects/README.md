@@ -173,6 +173,10 @@ Hover over an icon to see its name. The view buttons select Table (grid), Tree (
 The Expand group controls all request groups; a request's own menu changes only that request. The Level button and number picker
 expand the tree to a chosen branching level.
 
+Use **Source code** in the header to link captured filenames to your local IntelliJ project. Enter the project name shown in IntelliJ and source folders relative to that project (for example, `selene-core/src/main/java`). Package or class prefixes select the folder, with the most specific matching prefix taking precedence; a blank prefix provides a default. Exact class prefixes can distinguish test classes that share their application's package.
+
+You can also paste a link from IntelliJ's **Copy Path/Reference → Toolbox URL**. NPlusOne fills in the project and, for conventional `src/main/java` or `src/test/java` layouts, suggests a source-folder mapping. Class-reference URLs (`fqn=`) fill in the project and package, but need a source folder entered manually because they contain no file path. An existing matching source-folder mapping is preserved. Check the inferred prefix before saving. Settings are stored in your browser and apply to both live and search views. **JetBrains Toolbox must be installed and running.** Links open your local checkout at the captured line, so use the source version matching the monitored application. Frames without a filename and line number, or without a matching mapping, remain plain text. This feature does not upload source code or display it inside the dashboard.
+
 In Table view, Request start combines the timestamp and formatted request duration in parentheses; the next column shows the request name. Task wording applies when enabled.
 
 The Bar chart's x-bar (x?) toggle, after the Sort by buttons, averages SQL and N+1 counts across loaded, filtered requests with the same name. Toggle it to return to individual requests. Searching or loading more rows updates those averages.
