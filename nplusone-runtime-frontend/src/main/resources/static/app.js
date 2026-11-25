@@ -1,12 +1,12 @@
-import {installSourceLinks} from "./source-links.js?v=4290745485808292238";
+import {installSourceLinks} from "./source-links.js?v=3225721666910883229";
 import {createRowUpsertBuffer} from "./row-upsert-buffer.js?v=48697640598578990339980029898412325707";
 import {requestText} from "./request-terminology.js?v=9195521797058750261190268690836445467";
 import {createQuerySortingControl} from "./query-sorting.js?v=331865085574760660467463706444257593837";
 import {createOperationActions} from "./operation-actions.js?v=2026630561593422880079378453098791590";
-import {installProductTour} from "./product-tour.js?v=13395659906499803012";
-import {createDashboardTour} from "./tour-demo.js?v=6694885022006920742";
-import {createBarChart} from "./bar-chart.js?v=12670217209321708870";
-import {installToolbarIcons, setButtonIcon} from "./toolbar-icons.js?v=12186116085878300375";
+import {installProductTour} from "./product-tour.js?v=7154431140683941191";
+import {createDashboardTour} from "./tour-demo.js?v=2677142467159368221";
+import {createBarChart} from "./bar-chart.js?v=3217954903162854494";
+import {installToolbarIcons, setButtonIcon} from "./toolbar-icons.js?v=17145807429823737765";
 import {
     readStoredJson,
     readStoredValue,
@@ -18,17 +18,17 @@ import {
     formatSql,
     renderHighlightedSql
 } from "./sql-formatting.js?v=107542635421253244738066243612958793875";
-import {formatStackTrace, renderStackTrace} from "./stack-trace-formatting.js?v=9866234908312285417";
+import {formatStackTrace, renderStackTrace} from "./stack-trace-formatting.js?v=15917135791185664092";
 import {createFormattingCache} from "./formatting-cache.js?v=184586239211110810468916259075050871850";
 import {createVirtualTable} from "./virtual-table.js?v=188564036130668086952254147403045028520";
-import {createCallTreeView} from "./call-tree.js?v=15763958407560244842";
+import {createCallTreeView} from "./call-tree.js?v=7506377582797213436";
 import {sameCallQueries, sourceQueryKey} from "./call-tree-model.js?v=80209571130848559522647497809978973720";
-import {formatTableRequestSummary as formatRequestSummary, formatTableSqlSummary as formatSqlQuerySummary, renderTimingSummary} from "./request-summary.js?v=11803713701364284380";
-import {summarizeVisibleQueries, sameQueryVisibility, appendFilterIndicator} from "./query-visibility.js?v=17861249381879261445";
+import {formatTableRequestSummary as formatRequestSummary, formatTableSqlSummary as formatSqlQuerySummary, renderTimingSummary} from "./request-summary.js?v=10676067850012756965";
+import {summarizeVisibleQueries, sameQueryVisibility, appendFilterIndicator} from "./query-visibility.js?v=4201511681777436599";
 import {createLiveRowHighlights} from "./live-row-highlights.js?v=35176247045154739923212879942153530965";
 import {connectToTelemetryStream} from "./telemetry-stream.js?v=259228128537230349160352378558742048132";
 import {enableColumnResizing} from "./column-resizing.js?v=38730878206859953153070508903709775062";
-import {createExclusionFilters} from "./exclusion-filters.js?v=10108061893156282379";
+import {createExclusionFilters} from "./exclusion-filters.js?v=3498642694095001338";
 import {
     sortByNewestTimestamp,
     formatDuration, formatDateTimestamp

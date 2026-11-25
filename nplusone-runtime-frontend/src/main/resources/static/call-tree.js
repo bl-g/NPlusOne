@@ -3,10 +3,11 @@ import {readStoredValue, writeStoredValue} from "./browser-storage.js?v=29008405
 import {formatDateTimestamp as formatTimestamp, formatDuration} from "./time-formatting.js?v=182362643655531027511278026245356837010";
 import {createCallTreeCache, sameCallQueries, hiddenQueriesByNode, sourceQueryKey} from "./call-tree-model.js?v=80209571130848559522647497809978973720";
 import {projectCallTree} from "./call-tree-projection.js?v=217807320803597190502839157546091133361";
-import {formatRequestSummary, formatQuerySummary, formatSqlQuerySummary, renderTimingSummary} from "./request-summary.js?v=11803713701364284380";
-import {summarizeVisibleQueries, sameQueryVisibility, appendFilterIndicator} from "./query-visibility.js?v=17861249381879261445";
+import {formatRequestSummary, formatQuerySummary, formatSqlExecutionSummary, renderTimingSummary} from "./request-summary.js?v=10676067850012756965";
+import {summarizeVisibleQueries, sameQueryVisibility, appendFilterIndicator} from "./query-visibility.js?v=4201511681777436599";
 
-import {createSourceLink, sourceLinksVersion} from "./source-links.js?v=4290745485808292238";
+import {createSourceLink, sourceLinksVersion} from "./source-links.js?v=3225721666910883229";
+import {createToolbarIcon} from "./toolbar-icons.js?v=17145807429823737765";
 
 const VIEW_KEY = "nplusone.results-view.v1";
 const DISPLAY_KEY = "nplusone.call-tree-display.v1";
@@ -178,14 +179,37 @@ export function createCallTreeView({table, formatSql, renderSql, onChange, onBef
     }
     function counterBadge(issues, queries, {full = false, queryOnly = false, className = "", jdbcDurationMillis, serverDurationMillis,
         totalQueryDurationMillis = jdbcDurationMillis, visibility, onFilterClick} = {}) {
-        const description = queryOnly ? formatSqlQuerySummary(queries, jdbcDurationMillis, totalQueryDurationMillis)
+        const description = queryOnly ? formatSqlExecutionSummary(queries, jdbcDurationMillis, totalQueryDurationMillis)
             : formatRequestSummary(issues, queries, jdbcDurationMillis, full ? serverDurationMillis : null, totalQueryDurationMillis);
         const badge = element("span", `call-tree-issue${issues === 0 ? " call-tree-issue-neutral" : ""}${className}`);
         renderTimingSummary(badge, full || queryOnly ? description
             : formatQuerySummary(issues, queries, jdbcDurationMillis, serverDurationMillis, totalQueryDurationMillis),
-            queryOnly ? " " : " · ");
-        badge.title = description;
-        badge.setAttribute("aria-label", description);
+            queryOnly ? "" : " · ");
+        if (!full && !queryOnly) {
+            badge.classList.add("call-tree-compact-metrics");
+            badge.replaceChildren();
+            const metric = (iconName, value, label, warning = false) => {
+                const group = element("span", `compact-metric${warning ? " compact-metric-warning" : ""}`);
+                group.title = label;
+                group.setAttribute("aria-label", label);
+                const icon = iconName === "database" ? element("span", "compact-metric-label", "SQL") : createToolbarIcon(iconName);
+                if (iconName === "database") icon.setAttribute("aria-hidden", "true");
+                if (iconName === "nPlusOne") {
+                    icon.querySelector("rect").remove();
+                    icon.setAttribute("viewBox", "2 5 20 14");
+                }
+                icon.style.removeProperty("width");
+                group.append(icon, element("span", "compact-metric-value", value));
+                badge.append(group);
+            };
+            metric("nPlusOne", String(issues), `${issues} N+1 ${issues === 1 ? "problem" : "problems"}`, issues > 0);
+            metric("database", String(queries), `${queries} SQL ${queries === 1 ? "query" : "queries"}`);
+            const timing = formatQuerySummary(issues, queries, jdbcDurationMillis, serverDurationMillis, totalQueryDurationMillis)
+                .split(" · ").slice(2).join(" · ");
+            if (timing) metric("duration", timing, `${timing.replace(/\(([^()]*)\)/, "($1 of total query time)")} total SQL time`);
+        }
+        badge.title = queryOnly ? description.replace(String(queries), `${queries} SQL ${queries === 1 ? "execution" : "executions"}`) : description;
+        badge.setAttribute("aria-label", badge.title);
         badge.dataset.nPlusOneCount = String(issues);
         badge.dataset.sqlQueryCount = String(queries);
         appendFilterIndicator(badge, visibility, onFilterClick);

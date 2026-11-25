@@ -1,12 +1,12 @@
-import {installSourceLinks} from "./source-links.js?v=4290745485808292238";
+import {installSourceLinks} from "./source-links.js?v=3225721666910883229";
 import {configureDateRange} from "./date-range.js?v=70512685574943983513608468539075838973";
 import {sourceQueryKey} from "./call-tree-model.js?v=80209571130848559522647497809978973720";
 import {createQuerySortingControl} from "./query-sorting.js?v=331865085574760660467463706444257593837";
 import {createOperationActions} from "./operation-actions.js?v=2026630561593422880079378453098791590";
-import {installProductTour} from "./product-tour.js?v=13395659906499803012";
-import {createDashboardTour} from "./tour-demo.js?v=6694885022006920742";
-import {createBarChart} from "./bar-chart.js?v=12670217209321708870";
-import {installToolbarIcons, setButtonIcon} from "./toolbar-icons.js?v=12186116085878300375";
+import {installProductTour} from "./product-tour.js?v=7154431140683941191";
+import {createDashboardTour} from "./tour-demo.js?v=2677142467159368221";
+import {createBarChart} from "./bar-chart.js?v=3217954903162854494";
+import {installToolbarIcons, setButtonIcon} from "./toolbar-icons.js?v=17145807429823737765";
 import {
     readStoredValue,
     writeStoredValue
@@ -15,14 +15,14 @@ import {
     formatSql,
     renderHighlightedSql
 } from "./sql-formatting.js?v=107542635421253244738066243612958793875";
-import {formatStackTrace, renderStackTrace} from "./stack-trace-formatting.js?v=9866234908312285417";
+import {formatStackTrace, renderStackTrace} from "./stack-trace-formatting.js?v=15917135791185664092";
 import {createFormattingCache} from "./formatting-cache.js?v=184586239211110810468916259075050871850";
 import {createVirtualTable} from "./virtual-table.js?v=188564036130668086952254147403045028520";
-import {createCallTreeView} from "./call-tree.js?v=15763958407560244842";
-import {formatTableRequestSummary as formatRequestSummary, formatTableSqlSummary as formatSqlQuerySummary, renderTimingSummary} from "./request-summary.js?v=11803713701364284380";
-import {summarizeVisibleQueries, sameQueryVisibility, appendFilterIndicator} from "./query-visibility.js?v=17861249381879261445";
+import {createCallTreeView} from "./call-tree.js?v=7506377582797213436";
+import {formatTableRequestSummary as formatRequestSummary, formatTableSqlSummary as formatSqlQuerySummary, renderTimingSummary} from "./request-summary.js?v=10676067850012756965";
+import {summarizeVisibleQueries, sameQueryVisibility, appendFilterIndicator} from "./query-visibility.js?v=4201511681777436599";
 import {enableColumnResizing} from "./column-resizing.js?v=38730878206859953153070508903709775062";
-import {createExclusionFilters} from "./exclusion-filters.js?v=10108061893156282379";
+import {createExclusionFilters} from "./exclusion-filters.js?v=3498642694095001338";
 import {
     sortByNewestTimestamp,
     formatDuration,

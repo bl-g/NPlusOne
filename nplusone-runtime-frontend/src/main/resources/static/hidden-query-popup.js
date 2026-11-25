@@ -1,6 +1,6 @@
 import {formatDuration} from "./time-formatting.js?v=182362643655531027511278026245356837010";
 import {renderHighlightedSql} from "./sql-formatting.js?v=107542635421253244738066243612958793875";
-import {renderStackTrace} from "./stack-trace-formatting.js?v=9866234908312285417";
+import {renderStackTrace} from "./stack-trace-formatting.js?v=15917135791185664092";
 
 let current = null;
 

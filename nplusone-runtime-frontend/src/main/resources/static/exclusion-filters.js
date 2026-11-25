@@ -7,8 +7,8 @@ import {
     serializeRuleSets, parseRuleSets, regexError
 } from "./filter-model.js?v=96746998124892846094911012588429907879";
 export * from "./filter-model.js?v=96746998124892846094911012588429907879";
-import {createLongestQueriesControl} from "./longest-queries.js?v=13709843598746063991";
-import {setButtonIcon, createToolbarIcon} from "./toolbar-icons.js?v=12186116085878300375";
+import {createLongestQueriesControl} from "./longest-queries.js?v=2951551551764203624";
+import {setButtonIcon, createToolbarIcon} from "./toolbar-icons.js?v=17145807429823737765";
 
 const STORAGE_KEY = "nplusone.rule-sets.v1";
 const LEGACY_KEY = "nplusone.exclusion-filters.v1";

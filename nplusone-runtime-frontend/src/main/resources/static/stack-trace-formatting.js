@@ -1,4 +1,4 @@
-import {createSourceLink} from "./source-links.js?v=4290745485808292238";
+import {createSourceLink} from "./source-links.js?v=3225721666910883229";
 
 export function formatStackTrace(stackTrace) {
     const frames = stackTrace

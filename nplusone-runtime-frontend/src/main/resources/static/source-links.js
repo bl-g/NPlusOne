@@ -1,6 +1,6 @@
 import {readStoredJson, writeStoredJson, removeStoredValue} from "./browser-storage.js?v=290084059958384501112687013092675042027";
 import {normalizeSourceSettings, sourceLocation, sourceUrl, importToolboxUrl} from "./source-links-model.js?v=8625427331796203125";
-import {setButtonIcon} from "./toolbar-icons.js?v=12186116085878300375";
+import {setButtonIcon} from "./toolbar-icons.js?v=17145807429823737765";
 
 const STORAGE_KEY = "nplusone.source-links.v1";
 let settings = readSettings();

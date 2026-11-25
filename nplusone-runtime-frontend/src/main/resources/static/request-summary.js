@@ -37,6 +37,11 @@ export function formatQuerySummary(issues, queries, jdbcDurationMillis, serverDu
 export function formatSqlQuerySummary(queries, jdbcDurationMillis, totalQueryDurationMillis) {
     return withTiming(String(queries), jdbcDurationMillis, null, totalQueryDurationMillis, false);
 }
+
+export function formatSqlExecutionSummary(queries, jdbcDurationMillis, totalQueryDurationMillis) {
+    return withTiming(String(queries), jdbcDurationMillis, null, totalQueryDurationMillis, false)
+        .replace(" (", " total (");
+}
 export function formatTableRequestSummary(...args) {
     return formatRequestSummary(...args).replace(/, [^()]* of total query time(?=\))/g, "")
         .replace(/ \([^()]* of total query time\)/g, "");
